@@ -464,7 +464,8 @@ header {
         width: 42%; }
       .contact .contact-info .contact-form .input-message {
         width: 90%;
-        height: 150px; }
+        height: 150px;
+        resize: none; }
       .contact .contact-info .contact-form .button-send {
         text-transform: uppercase;
         width: 20%;
