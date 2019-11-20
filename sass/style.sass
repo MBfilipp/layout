@@ -6,14 +6,44 @@ body
 $yellow-color : #ffc600
 $gray-color : #717171
 
+%input-settings
+    border: 4px solid #c5c5c5
+    background-color: #2046b3
+    color: white
+    padding: 10px 18px
+    font-size: 25px
+    margin-bottom: 2%
+    &::placeholder
+        color: white
+
+%main-p
+    font-size: 20px
+    font-weight: 700
+
+%second-p
+    font-size: 20px
+    font-weight: 500
+    font-style: italic
+
+%strategic-method-block
+    display: flex
+    justify-content: center 
+    width: 100%
+    padding: 0
+
 %container-name
     padding-left: 100px
     padding-top: 160px
     padding-bottom: 25px
 
+%container-name-2
+    padding-left: 100px
+    padding-top: 60px
+    padding-bottom: 25px
+
 %full-size
     height: 100vh
-    weight: 100%
+    width: 100%
 
 .span-big
     font-size: 80px
@@ -21,6 +51,7 @@ $gray-color : #717171
 .span-black-weight
     color: black
     font-weight: 700
+    
 
 .span-yellow
     color: $yellow-color
@@ -33,6 +64,9 @@ $gray-color : #717171
     
 .span-underline-gray
     border-bottom: 1px solid #eeeeee
+
+.span-underline-white
+    border-bottom: 1px solid white
 
 header
     background: url(../images/header-fon.png) no-repeat center top fixed
@@ -179,8 +213,50 @@ header
 
             .featured-img
                 width: 25%
+    
+
+// BLOCK SETTINGS///////
+
+.block-h1
+    color: #1d1d1d
+
+.info-block
+    width: 42%
+
+.info-p-main
+    font-size: 20px
+    font-style: italic
+    color: black
+    font-weight: 700
+
+.info-p-second
+    font-size: 21px
+    font-weight: 400
+    color: $gray-color
+
+////////////////////////
 
 .strategic
+    .strategic-methods
+        padding-top: 70px
+        padding-bottom: 90px
+
+        .block
+            @extend %strategic-method-block
+            flex-direction: row
+
+            .info-block
+                padding-left: 50px
+                padding-top: 70px
+
+        .block-reverse
+            @extend %strategic-method-block
+            flex-direction: row-reverse
+
+            .info-block
+                padding-right: 50px
+                padding-top: 70px
+
     .strategic-name
         @extend %container-name
         .strategic-name-h1
@@ -198,3 +274,298 @@ header
             font-size: 20px
             font-weight: 400
             color: $gray-color
+
+.service
+    @extend %full-size
+    background: url(../images/services-fon.png) no-repeat center top fixed
+    background-size: cover
+    display: flex
+
+    .service-name
+        @extend %container-name 
+        width: 40%
+        height: 100vh
+        color: white
+        .service-name-h1
+            font-size: 45px
+            
+    .service-blocks
+        width: 60%
+        padding-top: 150px
+
+        .flex-block
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            width: 100%
+            padding-top: 130px
+
+            .service-block
+                width: 35%
+
+                .service-block-h4
+                    color: white
+                    font-size: 28px
+                    font-weight: 400
+
+                .service-block-p
+                    color: white
+                    font-size: 16px
+                    font-weight: 400
+
+.team
+    @extend %full-size
+    display: flex
+    width: 100%
+
+    .team-name
+        @extend %container-name
+        width: 35%
+
+    .team-main-block
+        .block-p
+            padding-top: 160px
+            width: 85%
+            .block-main-p
+                font-size: 22px
+                font-weight: 500
+                font-style: italic
+                padding-bottom: 30px
+
+            .block-second-p
+                font-size: 21px
+                font-weight: 400
+                color: $gray-color
+
+    .team-bio-blocks
+        padding-top: 50px
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        width: 90%
+
+        .block-img
+            width: 250px
+
+        .block-main-p
+            @extend %main-p
+            text-align: center
+
+        .block-second-p
+            @extend %second-p
+            text-align: center
+
+.testimonial
+    color: white
+    height: 70vh
+    width: 100%
+    background: black
+    display: flex
+
+    .flex-block
+        width: 70%
+
+        .testimonial-name
+            @extend %container-name-2
+            
+            .testimonial-name-h1
+                font-size: 45px
+        
+        .testimonial-p
+            width: 70%
+            padding-left: 150px
+
+            .testimonial-p-main
+                @extend %second-p
+                padding-bottom: 30px
+
+            .testimonial-p-second
+                font-size: 19px
+                font-weight: 400
+    
+    .testimonial-bio
+        padding-top: 7% 
+        .testimonial-img
+            width: 200px
+        
+        .bio-main-p
+            @extend %main-p
+            text-align: center
+
+        .bio-second-p
+            @extend %second-p
+            text-align: center
+
+.blog
+    @extend %full-size
+    display: flex
+
+    .flex-block
+        width: 35%
+
+        .blog-name
+            @extend %container-name-2
+
+            .blog-name-h1
+                font-size: 45px
+
+        .blog-menu
+            padding-left: 270px
+
+            .menu-ul
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                padding: 0
+                height: 500px
+
+                .menu-li
+                    list-style: none
+
+                    .menu-a
+                        text-decoration: none
+                        color: black
+                        font-size: 30px
+
+                        &:hover
+                            color: $yellow-color
+
+    .blog-blocks
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        width: 65%
+        padding-top: 5%
+
+        .blog-block
+            width: 33%
+
+            .block-img
+                width: 300px
+                height: 350px
+            
+            .p-data
+                font-size: 25px
+                font-weight: 500
+
+            .block-main-p
+                font-weight: 600
+                font-size: 22px
+
+            .block-second-p
+                width: 75%
+                font-weight: 500
+                font-size: 18px
+                font-style: italic
+
+.contact
+    @extend %full-size
+    display: flex
+
+    .contact-image
+        height: 100vh
+        width: 40%
+        .contact-img
+            height: 100vh
+
+    .contact-info
+        color: white
+        background: #2046b3
+ 
+        .contact-name
+            @extend %container-name-2
+
+        .contact-form
+            width: 80%
+            margin-left: 10%
+            .input-name
+                width: 90%
+                @extend %input-settings
+
+            .input-mobile
+                width: 43%
+                @extend %input-settings
+
+            .input-email
+                width: 42%
+                @extend %input-settings
+            
+            .input-message
+                width: 90%
+                height: 150px
+                @extend %input-settings
+
+            .button-send
+                text-transform: uppercase
+                width: 20%
+                background-color: #ffc600
+                border: none
+                .button-p
+                    font-size: 20px
+                    font-weight: 600
+        
+        .contact-location-map
+            margin-left: 10%
+            .map-p
+                font-size: 25px
+                font-weight: 600
+
+            .mini-info
+                display: flex
+                flex-direction: row
+                width: 60%
+                height: 50px
+                .map-p-main
+                    font-size: 25px
+                    font-weight: 600
+                    margin-right: 10%
+
+                .map-p-second
+                    font-size: 18px
+                    font-weight: 400
+                    margin-top: 30px
+                        
+footer
+    @extend %full-size
+    display: flex 
+    color: white
+
+    .left-side
+        width: 30%
+        background-color: black 
+
+        .footer-h1
+            padding-left: 30px
+            padding-top: 40px
+            padding-bottom: 25px
+            font-size: 120px
+    
+        .footer-ul
+                padding-left: 30px
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                height: 500px
+
+                .footer-li
+                    list-style: none
+
+                    .footer-a
+                        text-decoration: none
+                        text-transform: uppercase
+                        font-size: 26px
+                        color: white
+
+                        &:hover
+                            color: $yellow-color
+
+    .right-side
+        width: 70%
+        background: url(../images/foter-fon@2x.png) no-repeat bottom fixed
+
+        .footer-h1
+            font-size: 150px
+            letter-spacing: -6px
+            line-height: 120px
+            padding-top: 30%
+            padding-left: 10%
